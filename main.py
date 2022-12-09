@@ -6,12 +6,12 @@ from tkinter import PhotoImage
 import os
 #  QR Code Generator Function
 def Generate():
-    URL = LinkEntry.get()
-    qrcodeimg = qr.make(URL)
-    qrcodeimg.save("Generated.png") 
-    FinalImage = CTkImage(dark_image=Image.open("Generated.png"),size=(200,200))
-    QrCode.configure(image=FinalImage)
-    os.remove("Generated.png")
+    URL = LinkEntry.get()# Get Link From The Entry
+    qrcodeimg = qr.make(URL) # Generate QrCode
+    qrcodeimg.save("Generated.png") # Save Image
+    FinalImage = CTkImage(dark_image=Image.open("Generated.png"),size=(200,200)) # Resize Image
+    QrCode.configure(image=FinalImage) # Configure Image To Label
+    os.remove("Generated.png") # Remove,Saved Image
 # GUI
 primarycolor = "#30323D"
 secodarycolor = "#4D5061"
